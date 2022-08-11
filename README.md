@@ -6,8 +6,8 @@ It's goal is to provide a stable OAuth redirect callbacks for Authorization Prov
 
 When setting up your OAuth provider callbacks, use the following URLs:
 
-- https://authredirect.dynaboard.dev (preferred)
-- http://localhost:5001 (for development, if running this locally)
+- https://authredirect.dynaboard.dev/api/callback (preferred)
+- http://localhost:5001/api/callback (for development, if running this locally)
 
 ## Installation
 
@@ -18,6 +18,5 @@ $ pnpm install
 ## Running the app
 
 ```bash
-# development
 $ pnpm dev
 ```
