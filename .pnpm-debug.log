@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: io",
+      "code": "ENOENT",
+      "stack": "Error: not found: io\n    at getNotFoundError (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:41687:51)\n    at Function.whichSync [as sync] (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:41764:13)\n    at getCommandAbsolutePathSync (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:43329:44)\n    at default_1 (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:43338:32)\n    at /Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:172189:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/Users/omarestrella/Development/auth-redirect",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: io",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: io\n    at getNotFoundError (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:41687:51)\n    at Function.whichSync [as sync] (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:41764:13)\n    at getCommandAbsolutePathSync (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:43329:44)\n    at default_1 (/Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:43338:32)\n    at /Users/omarestrella/.volta/tools/image/node/14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.5/node_modules/pnpm/dist/pnpm.cjs:172189:39"
+    }
+  }
+}
