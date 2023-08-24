@@ -7,7 +7,6 @@ const JWT_SECRET =
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const oauthState = req.query["state"] as string | undefined;
-  console.log("OAUTHSTATE", oauthState);
   if (!oauthState) {
     throw new Error("Do not know where to redirect you");
   }
