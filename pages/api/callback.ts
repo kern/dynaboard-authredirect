@@ -7,14 +7,18 @@ const JWT_SECRET =
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const oauthState = req.query["state"] as string | undefined;
+  console.log("OAUTHSTATE", oauthState);
   if (!oauthState) {
     throw new Error("Do not know where to redirect you");
   }
 
-  try {
-    jwt.verify(oauthState, JWT_SECRET, { algorithms: ["HS256"] });
-  } catch (e: any) {
-    throw new Error("Unable to verify token");
+  const decoded = jwt.decode(oauthState, { complete: true });
+  if (decoded && decoded.payload) {
+    try {
+      jwt.verify(oauthState, JWT_SECRET, { algorithms: ["HS256"] });
+    } catch (e: any) {
+      throw new Error("Unable to verify token");
+    }
   }
 
   const endpointURL = req.cookies[oauthState];
