@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { setCookie } from "../../utils/cookies";
 import jwt from "jsonwebtoken";
+import { verifyState } from "../../utils/jwt";
 
 const JWT_SECRET =
   process.env.NODE_ENV === "production" ? process.env.JWT_SECRET : "secret";
@@ -11,14 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     throw new Error("Do not know where to redirect you");
   }
 
-  const decoded = jwt.decode(oauthState, { complete: true });
-  if (decoded && decoded.payload) {
-    try {
-      jwt.verify(oauthState, JWT_SECRET, { algorithms: ["HS256"] });
-    } catch (e: any) {
-      throw new Error("Unable to verify token");
-    }
-  }
+  verifyState(oauthState);
 
   const endpointURL = req.cookies[oauthState];
   if (!endpointURL) {

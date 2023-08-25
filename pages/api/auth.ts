@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { setCookie } from "../../utils/cookies";
+import { verifyState } from "../../utils/jwt";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const encodedAuthURL = req.query["encodedAuthURL"] as string | undefined;
@@ -18,6 +19,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   );
   console.log("authorizationURL", authorizationURL.toString());
   console.log("endpointURL", authorizationURL.toString());
+
+  verifyState(authorizationURL.searchParams.get("state"));
 
   setCookie(
     res,
