@@ -3,8 +3,7 @@ import { setCookie } from "../../utils/cookies";
 import jwt from "jsonwebtoken";
 import { verifyState } from "../../utils/jwt";
 
-const JWT_SECRET =
-  process.env.NODE_ENV === "production" ? process.env.JWT_SECRET : "secret";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const oauthState = req.query["state"] as string | undefined;
