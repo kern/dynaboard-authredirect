@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET =
-  process.env.NODE_ENV === "production" ? process.env.JWT_SECRET : "secret";
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const verifyState = (oauthState: string) => {
   // if state is a JWT, it's coming from an app
